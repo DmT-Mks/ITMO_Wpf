@@ -3,10 +3,131 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApps"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="700"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ToolBarTray Grid.Row="0">
+            <ToolBar Margin="5" Padding="5">
+                <Grid VerticalAlignment=" Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ComboBox Grid.Row="0" Grid.Column="0"
+                              Margin="5"
+                              Padding="5"
+                              SelectedIndex="0"
+                              Width="200"
+                              FontSize="16"
+                              IsEditable="True"
+                              SelectionChanged="FontFamily_OnSelectionChanged">
+                        <TextBlock Text="Arial" />
+                        <TextBlock Text="Times New Roman" />
+                        <TextBlock Text="Verdana" />
+                    </ComboBox>
+                    <ComboBox Grid.Row="0" Grid.Column="1"
+                              Margin="5"
+                              Padding="5"
+                              SelectedIndex="1"
+                              Width="50"
+                              FontSize="16"
+                              SelectionChanged="FontSize_OnSelectionChanged">
+                        <TextBlock Text="12" />
+                        <TextBlock Text="14" />
+                        <TextBlock Text="16" />
+                        <TextBlock Text="20" />
+                        <TextBlock Text="22" />
+                    </ComboBox>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Шрифт"
+                               FontSize="10"
+                               Foreground="Gray"
+                               HorizontalAlignment="Center"
+                               Margin="0,1,0,0"
+                               Grid.ColumnSpan="2" />
+                </Grid>
+            </ToolBar>
+            <ToolBar Margin="5" Padding="5">
+                <Grid VerticalAlignment=" Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ToggleButton Grid.Row="0" Grid.Column="0"
+                                  BorderBrush="Gray"
+                                  Margin="2"
+                                  Click="SetTextBold_OnClick">
+                        <Image Source="Resource/iconBold.png" />
+                    </ToggleButton>
+                    <ToggleButton Grid.Row="0" Grid.Column="1"
+                                  BorderBrush="Gray"
+                                  Margin="2"
+                                  Click="SetTextItalic_OnClick">
+                        <Image Source="Resource/iconItalic.png" />
+                    </ToggleButton>
+                    <ToggleButton Grid.Row="0" Grid.Column="2"
+                                  BorderBrush="Gray"
+                                  Margin="2"
+                                  Click="SetTextUnderline_OnClick">
+                        <Image Source="Resource/iconUnder.png" />
+                    </ToggleButton>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Стиль"
+                               FontSize="10"
+                               Foreground="Gray"
+                               HorizontalAlignment="Center"
+                               Margin="0,1,0,0"
+                               Grid.ColumnSpan="3" />
+                </Grid>
+            </ToolBar>
+            <ToolBar Margin="5">
+                <Grid VerticalAlignment=" Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid Margin="5,0,0,0" VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <RadioButton Grid.Row="0"
+                                     IsChecked="True"
+                                     Margin="2"
+                                     Checked="SetTextBlack_OnChecked">
+                            <TextBlock Text="Черный" />
+                        </RadioButton>
+                        <RadioButton Grid.Row="1"
+                                     Margin="2"
+                                     Checked="SetTextRed_OnChecked">
+                            <TextBlock Text="Красный" />
+                        </RadioButton>
+                    </Grid>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Цвет"
+                               FontSize="10"
+                               Foreground="Gray"
+                               HorizontalAlignment="Center"
+                               Margin="0,1,0,0" />
+                </Grid>
+            </ToolBar>
+        </ToolBarTray>
+        <Separator Grid.Row="0" VerticalAlignment="Bottom" />
+        <TextBox Grid.Row="1" x:Name="TextBox"
+                 FontSize="14"
+                 Margin="5"
+                 Padding="5"
+                 TextWrapping="Wrap" />
     </Grid>
 </Window>
