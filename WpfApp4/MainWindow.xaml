@@ -1,0 +1,210 @@
+﻿<Window x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        SizeToContent="Height"
+        MinHeight="350"
+        Width="450"
+        MinWidth="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Конвертер валют">
+                <UniformGrid Rows="2" Columns="2" VerticalAlignment="Top">
+                    <GroupBox Margin="10" Padding="5" BorderBrush="LawnGreen" BorderThickness="2"
+                              VerticalAlignment="Center">
+                        <GroupBox.Header>
+                            <Label Content="$ -> Руб" FontSize="14" BorderBrush="LawnGreen" BorderThickness="1" />
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Курс $" />
+                            <TextBox Grid.Row="0" Grid.Column="1" x:Name="DollarRate" Margin="3"
+                                     TextChanged="DollarToRubSum_OnTextChanged" />
+                            <Label Grid.Row="1" Grid.Column="0" Content="Сумма $" />
+                            <TextBox Grid.Row="1" Grid.Column="1" x:Name="DollarSum" Margin="3"
+                                     TextChanged="DollarToRubSum_OnTextChanged" />
+                            <Label Grid.Row="2" Grid.Column="0" Content="Сумма Руб" />
+                            <TextBox Grid.Row="2" Grid.Column="1" x:Name="DollarToRubSum" Margin="3" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Margin="10" Padding="5" BorderBrush="Blue" BorderThickness="2" VerticalAlignment="Center">
+                        <GroupBox.Header>
+                            <Label Content="€ -> Руб" FontSize="14" BorderBrush="Blue" BorderThickness="1" />
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Курс €" />
+                            <TextBox Grid.Row="0" Grid.Column="1" x:Name="EuroRate" Margin="3"
+                                     TextChanged="EuroToRubSum_OnTextChanged" />
+                            <Label Grid.Row="1" Grid.Column="0" Content="Сумма €" />
+                            <TextBox Grid.Row="1" Grid.Column="1" x:Name="EuroSum" Margin="3"
+                                     TextChanged="EuroToRubSum_OnTextChanged" />
+                            <Label Grid.Row="2" Grid.Column="0" Content="Сумма Руб" />
+                            <TextBox Grid.Row="2" Grid.Column="1" x:Name="EuroToRubSum" Margin="3" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Margin="10" Padding="5" BorderBrush="Aqua" BorderThickness="2" VerticalAlignment="Center">
+                        <GroupBox.Header>
+                            <Label Content="₴ -> Руб" FontSize="14" BorderBrush="Aqua" BorderThickness="1" />
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Курс ₴" />
+                            <TextBox Grid.Row="0" Grid.Column="1" x:Name="GrivnaRate" Margin="3"
+                                     TextChanged="GrivnaToRubSum_OnTextChanged" />
+                            <Label Grid.Row="1" Grid.Column="0" Content="Сумма ₴" />
+                            <TextBox Grid.Row="1" Grid.Column="1" x:Name="GrivnaSum" Margin="3"
+                                     TextChanged="GrivnaToRubSum_OnTextChanged" />
+                            <Label Grid.Row="2" Grid.Column="0" Content="Сумма Руб" />
+                            <TextBox Grid.Row="2" Grid.Column="1" x:Name="GrivnaToRubSum" Margin="3" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Margin="10" Padding="5" BorderBrush="IndianRed" BorderThickness="2"
+                              VerticalAlignment="Center">
+                        <GroupBox.Header>
+                            <Label Content="֏ -> Руб" FontSize="14" BorderBrush="IndianRed" BorderThickness="1" />
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Курс ֏" />
+                            <TextBox Grid.Row="0" Grid.Column="1" x:Name="DramaRate" Margin="3"
+                                     TextChanged="DramaToRubSum_OnTextChanged" />
+                            <Label Grid.Row="1" Grid.Column="0" Content="Сумма ֏" />
+                            <TextBox Grid.Row="1" Grid.Column="1" x:Name="DramaSum" Margin="3"
+                                     TextChanged="DramaToRubSum_OnTextChanged" />
+                            <Label Grid.Row="2" Grid.Column="0" Content="Сумма Руб" />
+                            <TextBox Grid.Row="2" Grid.Column="1" x:Name="DramaToRubSum" Margin="3" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                </UniformGrid>
+            </TabItem>
+            <TabItem Header="Конвертер расстояния">
+                <UniformGrid Rows="2" Columns="2" VerticalAlignment="Top">
+                    <GroupBox Margin="10" Padding="5" BorderBrush="MediumVioletRed" BorderThickness="2"
+                              VerticalAlignment="Center">
+                        <GroupBox.Header>
+                            <Label Content="Дюймы -> Метры" FontSize="14" BorderBrush="MediumVioletRed" BorderThickness="1" />
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="1" Grid.Column="0" Content="Дюймы" />
+                            <TextBox Grid.Row="1" Grid.Column="1" x:Name="InchesLength" Margin="3"
+                                     TextChanged="InchesToMLength_OnTextChanged" />
+                            <Label Grid.Row="2" Grid.Column="0" Content="Метры" />
+                            <TextBox Grid.Row="2" Grid.Column="1" x:Name="InchesToMLength" Margin="3" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Margin="10" Padding="5" BorderBrush= "Goldenrod" BorderThickness="2" VerticalAlignment="Center">
+                        <GroupBox.Header>
+                            <Label Content="Футы -> Метры" FontSize="14" BorderBrush="Goldenrod" BorderThickness="1" />
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="1" Grid.Column="0" Content="Футы" />
+                            <TextBox Grid.Row="1" Grid.Column="1" x:Name="FeetLength" Margin="3"
+                                     TextChanged="FeetToMLength_OnTextChanged" />
+                            <Label Grid.Row="2" Grid.Column="0" Content="Метры" />
+                            <TextBox Grid.Row="2" Grid.Column="1" x:Name="FeetToMLength" Margin="3" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Margin="10" Padding="5" BorderBrush="ForestGreen" BorderThickness="2" VerticalAlignment="Center">
+                        <GroupBox.Header>
+                            <Label Content="Милли -> Метры" FontSize="14" BorderBrush="ForestGreen" BorderThickness="1" />
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="1" Grid.Column="0" Content="Милли" />
+                            <TextBox Grid.Row="1" Grid.Column="1" x:Name="MilesLength" Margin="3"
+                                     TextChanged="MilesToMLength_OnTextChanged" />
+                            <Label Grid.Row="2" Grid.Column="0" Content="Метры" />
+                            <TextBox Grid.Row="2" Grid.Column="1" x:Name="MilesToMLength" Margin="3" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Margin="10" Padding="5" BorderBrush="CornflowerBlue" BorderThickness="2"
+                              VerticalAlignment="Center">
+                        <GroupBox.Header>
+                            <Label Content="Версты -> Метры" FontSize="14" BorderBrush="CornflowerBlue" BorderThickness="1" />
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="1" Grid.Column="0" Content="Версты" />
+                            <TextBox Grid.Row="1" Grid.Column="1" x:Name="VerstsLength" Margin="3"
+                                     TextChanged="VerstsToMLength_OnTextChanged" />
+                            <Label Grid.Row="2" Grid.Column="0" Content="Метры" />
+                            <TextBox Grid.Row="2" Grid.Column="1" x:Name="VerstsToMLength" Margin="3" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                </UniformGrid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
