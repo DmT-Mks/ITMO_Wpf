@@ -98,51 +98,58 @@ namespace WpfApps
                 Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.**"
             };
 
-            if (openFileDialog.ShowDialog() != true) 
+            if (openFileDialog.ShowDialog() != true)
                 return;
-            
+
             TextBox.Text = File.ReadAllText(openFileDialog.FileName);
             FileName = openFileDialog.FileName;
         }
-        
-        private string FileName {get; set;}
-        
+
+        private string FileName { get; set; }
+
         private void MenuItem_Save(object sender, RoutedEventArgs e)
         {
-            
+            if (string.IsNullOrEmpty(FileName))
+            {
+                MenuItem_SaveAs(sender, e);
+            }
+            else
+            {
                 File.WriteAllText(FileName, TextBox.Text);
+            }
         }
-        
+
         private void MenuItem_SaveAs(object sender, RoutedEventArgs e)
         {
             var saveFileDialog = new SaveFileDialog
             {
                 Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.**"
             };
-            
+
             if (saveFileDialog.ShowDialog() == true)
             {
                 File.WriteAllText(saveFileDialog.FileName, TextBox.Text);
             }
         }
+
         private void MenuItem_Exit(object sender, RoutedEventArgs e)
         {
-           var result = MessageBox.Show("Сохранить текстовый файл?", "Внимание", MessageBoxButton.YesNoCancel);
-            
-           switch (result)
-           {
-               case MessageBoxResult.Yes:
-                   File.WriteAllText(FileName, TextBox.Text);
-                   Application.Current.Shutdown();
-                   break;
+            var result = MessageBox.Show("Сохранить файл?", "Внимание", MessageBoxButton.YesNoCancel);
 
-               case MessageBoxResult.No:
-                   Application.Current.Shutdown();
-                   break;
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    File.WriteAllText(FileName, TextBox.Text);
+                    Application.Current.Shutdown();
+                    break;
 
-               case MessageBoxResult.Cancel:
-                   break;
-           }
+                case MessageBoxResult.No:
+                    Application.Current.Shutdown();
+                    break;
+
+                case MessageBoxResult.Cancel:
+                    break;
+            }
         }
     }
 }

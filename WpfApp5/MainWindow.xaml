@@ -77,20 +77,23 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <ToggleButton Grid.Row="0" Grid.Column="0"
-                                      BorderBrush="Gray"
+                                      BorderThickness="0"
                                       Margin="2"
+                                      Background="Transparent"
                                       Click="SetTextBold_OnClick">
                             <Image Source="Resource/iconBold.png" />
                         </ToggleButton>
                         <ToggleButton Grid.Row="0" Grid.Column="1"
-                                      BorderBrush="Gray"
+                                      BorderThickness="0"
                                       Margin="2"
+                                      Background="Transparent"
                                       Click="SetTextItalic_OnClick">
                             <Image Source="Resource/iconItalic.png" />
                         </ToggleButton>
                         <ToggleButton Grid.Row="0" Grid.Column="2"
-                                      BorderBrush="Gray"
+                                      BorderThickness="0"
                                       Margin="2"
+                                      Background="Transparent"
                                       Click="SetTextUnderline_OnClick">
                             <Image Source="Resource/iconUnder.png" />
                         </ToggleButton>
