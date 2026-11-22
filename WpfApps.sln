@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp5.1", "WpfApp5.1\WpfA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp6", "WpfApp6\WpfApp6.csproj", "{AE62AB5E-F9B6-4439-A23E-BA078EE1E86C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp7", "WpfApp7\WpfApp7.csproj", "{C37A5913-DAE1-421C-90F1-00E5C38AA2CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{AE62AB5E-F9B6-4439-A23E-BA078EE1E86C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE62AB5E-F9B6-4439-A23E-BA078EE1E86C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE62AB5E-F9B6-4439-A23E-BA078EE1E86C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C37A5913-DAE1-421C-90F1-00E5C38AA2CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C37A5913-DAE1-421C-90F1-00E5C38AA2CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C37A5913-DAE1-421C-90F1-00E5C38AA2CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C37A5913-DAE1-421C-90F1-00E5C38AA2CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
