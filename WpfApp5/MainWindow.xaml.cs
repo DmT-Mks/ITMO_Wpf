@@ -134,22 +134,27 @@ namespace WpfApps
 
         private void MenuItem_Exit(object sender, RoutedEventArgs e)
         {
-            var result = MessageBox.Show("Сохранить файл?", "Внимание", MessageBoxButton.YesNoCancel);
-
-            switch (result)
+            if (!string.IsNullOrEmpty(TextBox.Text))
             {
-                case MessageBoxResult.Yes:
-                    File.WriteAllText(FileName, TextBox.Text);
-                    Application.Current.Shutdown();
-                    break;
+                var result = MessageBox.Show("Сохранить файл?", "Внимание", MessageBoxButton.YesNoCancel);
 
-                case MessageBoxResult.No:
-                    Application.Current.Shutdown();
-                    break;
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        File.WriteAllText(FileName, TextBox.Text);
+                        Application.Current.Shutdown();
+                        break;
 
-                case MessageBoxResult.Cancel:
-                    break;
+                    case MessageBoxResult.No:
+                        Application.Current.Shutdown();
+                        break;
+
+                    case MessageBoxResult.Cancel:
+                        return;
+                }
             }
+
+            Application.Current.Shutdown();
         }
     }
 }
